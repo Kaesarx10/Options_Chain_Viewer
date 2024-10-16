@@ -17,7 +17,7 @@ print("Available expiration dates:", options_dates)
 
 # Fetch options data for a specific expiration dates
 
-options_chain = stock.option_chain(expiration_date)
+options_chain = stock.option_chain(options_dates[0])
 
 calls = options_chain.calls
 
@@ -28,5 +28,5 @@ print("Puts:\n", puts)
 
 # Plotting the call Options' strike prices vs their last prices
 
-calls.plot(x='strike', y='lastPrice', kind='bar')
+calls.plot(x='strike', y='lastPrice', kind='line')
 plt.show()
